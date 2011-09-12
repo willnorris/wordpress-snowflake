@@ -25,7 +25,7 @@ function snowflake_googleplus_meta_box($post) {
     })();
 
     function plusone_end(data) {
-      if (true || data.type == 'confirm') {
+      if (data.type == 'confirm') {
         // fetch recent activities from Google+ API
         jQuery.getJSON('https://www.googleapis.com/plus/v1/people/<?php echo $googleplus_id; ?>/activities/public?callback=?', {
           fields: 'items/id,items/url,items/object/attachments/objectType,items/object/attachments/url',
