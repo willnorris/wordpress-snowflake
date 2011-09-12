@@ -10,6 +10,8 @@
  Text Domain: hum
  */
 
+require_once(dirname(__FILE__) . '/admin.php');
+require_once(dirname(__FILE__) . '/google-plus.php');
 
 /**
  * Get the content of the specified post, truncated to a maximum number of
