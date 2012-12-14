@@ -17,7 +17,7 @@ function snowflake_googleplus_meta_box($post) {
     return;
   }
 ?>
-  <g:plusone size="medium" href="<?php echo get_permalink($post); ?>" onendinteraction="plusone_end"></g:plusone>
+  <div class="g-plusone" data-size="medium" data-href="<?php echo get_permalink($post); ?>" data-onendinteraction="plusone_end"></div>
   <script>
     // load async
     (function() {
