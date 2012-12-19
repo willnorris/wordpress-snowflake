@@ -16,8 +16,23 @@ function snowflake_googleplus_meta_box($post) {
     echo '<p>' . __('Please set your Google+ ID.') . '</p>';
     return;
   }
+
+  $url = get_permalink($post);
+
+  // for posts with the 'link' format, +1 button should point to the link
+  if ( get_post_format($post) == 'link' ) {
+    // markdown-on-save plugin switches out the post content on the edit screen,
+    // so we have to read from post_content_filtered
+    $content = !empty($post->post_content_filtered)
+      ? html_entity_decode($post->post_content_filtered)
+      : $post->post_content;
+    preg_match('/<a href="(.+?)">/', $content, $links);
+    if ( $links ) {
+      $url = $links[1];
+    }
+  }
 ?>
-  <div class="g-plusone" data-size="medium" data-href="<?php echo get_permalink($post); ?>" data-onendinteraction="plusone_end"></div>
+  <div class="g-plusone" data-size="medium" data-href="<?php echo $url ?>" data-onendinteraction="plusone_end"></div>
   <script>
     // load async
     (function() {
