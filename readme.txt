@@ -1,6 +1,8 @@
 === Snowflake ===
 Contributors: willnorris
 Requires at least: 3.2
+License: Apache 2.0
+License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 Syndicate your WordPress posts out to various social services.
 
